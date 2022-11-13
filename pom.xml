@@ -32,12 +32,12 @@
   <distributionManagement>
     <repository>
         <id>central</id>
-        <name>e755d8206f75-releases</name>
+        <name>c5b18fd53f57-releases</name>
         <url>http://artifactory:8081/artifactory/spring-petclinic</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>e755d8206f75-snapshots</name>
+        <name>c5b18fd53f57-snapshots</name>
         <url>http://artifactory:8081/artifactory/spring-petclinic</url>
     </snapshotRepository>
 </distributionManagement>
