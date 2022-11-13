@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    tools {
+     maven 'mvn-local'
+    }
+    stages {
+        stage("Scan"){
+            steps{
+                withSonarQubeEnv('sonar-scanner') {
+                    sh 'mvn clean package sonar:sonar'
+                }
+            }
+        }
+        stage('Tests, generate jar and Upload to Artifactory') {
+            steps {
+                sh 'mvn clean install deploy'
+            }
+        }
+        stage('Docker Build') {
+            steps {
+              sh 'docker build -t drexxcbba/docker-petclinic-demo:latest .'
+            }
+       }
+    }
+}
